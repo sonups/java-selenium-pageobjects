@@ -1,4 +1,4 @@
-# BackbaseAutomation
+# Backbase QA Assignment
 Project to automate computer info application
 
 **** Requirement *******
