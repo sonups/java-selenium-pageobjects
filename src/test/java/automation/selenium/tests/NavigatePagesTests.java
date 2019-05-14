@@ -1,4 +1,4 @@
-package automation.SeleniumUIAutomation;
+package automation.selenium.tests;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;

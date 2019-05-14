@@ -1,4 +1,4 @@
-package automation.SeleniumUIAutomation;
+package automation.selenium.tests;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -10,17 +10,17 @@ import automation.core.AutomationContextContainer;
 import automation.pages.MainPage;
 import automation.utils.WaitHelper;
 
-public class UpdateComputerTest extends AutomationContextContainer {
+public class DeleteComputerTest extends AutomationContextContainer {
 
 	private MainPage mainPage;
 
-	public UpdateComputerTest() {
+	public DeleteComputerTest() {
 		super();
 		this.mainPage = super.getMainPage();
 	}
 	
 	@Test
-	public void updateFirstComputerInHTMLTable() {
+	public void deleteFirstComputerInReportGrid() {
 		assertThat("Incorrect Global Label", mainPage.GlobalHeader().getText(),
 				containsString("Play sample application — Computer database"));
 
@@ -29,13 +29,10 @@ public class UpdateComputerTest extends AutomationContextContainer {
 		mainPage.ViewComputers().ComputerDataGrid().getReportRow(0).ComputerName().click();
 		assertThat("Error reaching edit computer page", mainPage.EditComputer().HeadingLabel().getText(),
 				matchesPattern("^Edit computer$"));
-		mainPage.EditComputer().ComputerName().SendKeys("AAAAA - updated");
-		mainPage.EditComputer().IntroducedDate().SendKeys("2019-01-01");
-		mainPage.EditComputer().DiscontinuedDate().SendKeys("2019-01-30");
-		mainPage.EditComputer().SelectComputerType().selectItemByIndex(1);
-		mainPage.EditComputer().CreateComputer().click();
-		assertThat("Error in updating computer details", mainPage.ViewComputers().AlertMessage().getText(),
-				containsString("has been updated"));
+		mainPage.EditComputer().DeleteComputer().click();
+		assertThat("Alert message retrived after deleting computer is unexpcted",
+				mainPage.ViewComputers().AlertMessage().getText(), containsString("Computer has been deleted"));
 		WaitHelper.waitInSeconds(5);
 	}
+	
 }
