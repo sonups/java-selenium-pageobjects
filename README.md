@@ -1,7 +1,7 @@
 # Backbase QA Assignment
 Project to automate computer info application
 
-**** Requirement *******
+**** Requirements *******
 1. Windows 7/ Windows 10 machine 
 2. Gradle to be installed and configure GRADLE_HOME in path variable
 
