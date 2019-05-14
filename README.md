@@ -19,6 +19,10 @@ To run the UI Selenium automation suite only,  run the following command :
 To run the REST assured test only,  run the following command :
 
     gradle clean test --tests automation.restassured.htmlresponses.*
+    
+A MS Powerpoint presentation is added to give an overview on how the automation project is organised.
+
+    \AutomationFramework.pptx
    
 ----------------------------------------------------------------------------------------------------------------------------------
 
