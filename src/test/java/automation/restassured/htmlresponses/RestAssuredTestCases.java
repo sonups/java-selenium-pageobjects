@@ -23,26 +23,26 @@ public class RestAssuredTestCases extends TestBase {
 	@Test
 	public void verifySearchComputerByName() {
 
-		Response response = REQUEST.given().queryParam("f", "Zion").get("/computers");
+		Response response = REQUEST.given().queryParam("f", "Z").get("/computers");
 		String responseString = response.asString();
 		response.then().statusCode(200);
-		assertThat(responseString, containsString("<td><a href=\"/computers/641\">Zion Mainframe</a></td>"));
+		assertThat(responseString, containsString("<td><a href=\"/computers/171\">Sinclair ZX80</a></td>"));
 
 	}
 
 	@Test
 	public void verifyReadComputerDetails() {
 
-		Response response = REQUEST.given().get("/computers/577");
+		Response response = REQUEST.given().get("/computers/171");
 		String responseString = response.asString();
 		response.then().statusCode(200);
 		assertThat(responseString,
-				containsString("<input type=\"text\" id=\"name\" name=\"name\" value=\"AAAAABB\" >"));
+				containsString("<input type=\"text\" id=\"name\" name=\"name\" value=\"Sinclair ZX80\" >"));
 		assertThat(responseString,
-				containsString("<input type=\"text\" id=\"introduced\" name=\"introduced\" value=\"2019-01-01\" >"));
-		assertThat(responseString, containsString(
-				"<input type=\"text\" id=\"discontinued\" name=\"discontinued\" value=\"2019-01-01\" >"));
-		assertThat(responseString, containsString("<option value=\"2\" selected>Thinking Machines</option>"));
+				containsString("<input type=\"text\" id=\"introduced\" name=\"introduced\" value=\"\" >"));
+		assertThat(responseString,
+				containsString("<input type=\"text\" id=\"discontinued\" name=\"discontinued\" value=\"\" >"));
+		assertThat(responseString, containsString("<option value=\"25\" selected>Sinclair Research Ltd</option>"));
 
 	}
 
@@ -109,7 +109,7 @@ public class RestAssuredTestCases extends TestBase {
 				"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3",
 				"Accept-Encoding", "gzip, deflate", "Accept-Language", "en-US,en;q=0.9")
 				.param("name", "AAAAB", "introduced", "2019-01-01", "discontinued", "2019-01-01", "company", "21")
-				.redirects().follow(false).post("/computers/575");
+				.redirects().follow(false).post("/computers/170");
 		response.then().statusCode(303);
 
 		String location = response.getHeader("Location");
