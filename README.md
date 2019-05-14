@@ -25,13 +25,16 @@ To run the REST assured test only,  run the following command :
 Manual Testing & Documentation
 
 Please find the details of Test Scenarios, Steps, Test results in the below excel file:
+
     \manueltest\TestCases.xls
 
 Test information provided in 2 worksheets - 
- Excel worksheet 1 - Backbase QA Test - Detailed Test Execution steps & Results
- Excel worksheet 2 - Test Summary - Summary results of test cases executed
+
+    Excel worksheet 1 - Backbase QA Test - Detailed Test Execution steps & Results
+    Excel worksheet 2 - Test Summary - Summary results of test cases executed
  
  The screenshots of Issues found are placed in MS word document
+    
     \manueltest\Issues found.docx
 
 
