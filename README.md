@@ -28,7 +28,7 @@ Please find the details of Test Scenarios, Steps, Test results in the below exce
 
     \manueltest\TestCases.xls
 
-Test information provided in 2 worksheets - 
+Test information is provided in 2 worksheets - 
 
     Excel worksheet 1 - Backbase QA Test - Detailed Test Execution steps & Results
     Excel worksheet 2 - Test Summary - Summary results of test cases executed
