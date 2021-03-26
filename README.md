@@ -1,5 +1,5 @@
-# Backbase QA Assignment
-Project to automate computer info application
+
+Project to automate computer info application using Java - Selenium
 
 **** Requirements *******
 1. Windows 7/ Windows 10 machine 
